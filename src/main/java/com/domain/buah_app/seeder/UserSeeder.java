@@ -6,7 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.domain.buah_app.models.User;
+import com.domain.buah_app.entity.User;
 import com.domain.buah_app.repository.UserRepository;
 
 @Component

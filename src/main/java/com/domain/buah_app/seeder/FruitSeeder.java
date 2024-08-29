@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.domain.buah_app.models.Fruit;
+import com.domain.buah_app.entity.Fruit;
 import com.domain.buah_app.repository.FruitRepository;
 
 @Component

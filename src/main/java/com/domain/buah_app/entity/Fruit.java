@@ -1,4 +1,4 @@
-package com.domain.buah_app.models;
+package com.domain.buah_app.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
