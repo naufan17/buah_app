@@ -40,7 +40,7 @@ public class AuthServiceImpl implements AuthService{
     String token = this.jwtUtil.generateToken(request.getEmail());
 
     return LoginResponse.builder()
-            .accessToken(token)
-            .build();
+      .accessToken(token)
+      .build();
   }    
 } 

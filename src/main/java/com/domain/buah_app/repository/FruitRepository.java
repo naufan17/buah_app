@@ -7,5 +7,4 @@ import com.domain.buah_app.entity.Fruit;
 
 @Repository
 public interface FruitRepository extends JpaRepository<Fruit, Long> {
-  
 }

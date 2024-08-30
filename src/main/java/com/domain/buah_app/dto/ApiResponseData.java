@@ -3,16 +3,18 @@ package com.domain.buah_app.dto;
 import lombok.Builder;
 
 @Builder
-public class ApiResponse<T> {
+public class ApiResponseData<T> {
 
   private String status;
   private String message;
+  private T data;
 
-  public ApiResponse() {}
+  public ApiResponseData() {}
 
-  public ApiResponse(String status, String message) {
+  public ApiResponseData(String status, String message, T data) {
     this.status = status;
     this.message = message;
+    this.data = data;
   }
 
   public String getStatus() {
@@ -29,5 +31,13 @@ public class ApiResponse<T> {
 
   public void setMessage(String message) {
     this.message = message;
+  }
+
+  public T getData() {
+    return data;
+  }
+
+  public void setData(T data) {
+    this.data = data;
   }
 }
