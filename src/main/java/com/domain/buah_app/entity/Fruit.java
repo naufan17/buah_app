@@ -1,5 +1,7 @@
 package com.domain.buah_app.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "fruits")
-public class Fruit {
+public class Fruit implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,14 +21,12 @@ public class Fruit {
   @Column(length = 100, nullable = false, unique = true)
   private String name;
 
-  // Constructors
   public Fruit() {}
 
   public Fruit(String name) {
     this.name = name;
   }
 
-  // Getters and setters
   public Long getId() {
     return id;
   }

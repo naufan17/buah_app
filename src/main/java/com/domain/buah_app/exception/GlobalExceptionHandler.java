@@ -11,6 +11,17 @@ import com.domain.buah_app.dto.ApiResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<ApiResponse<String>> handleGenericException(Exception ex) {
+    ApiResponse<String> response = ApiResponse.<String>builder()
+      .status("Not Found")
+      .message("Route not found")
+      .build();
+
+    return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+  }
+
   @ExceptionHandler(value = { BadCredentialsException.class })
   public ResponseEntity<ApiResponse<Object>> badCredentialsException(BadCredentialsException exception) {
 

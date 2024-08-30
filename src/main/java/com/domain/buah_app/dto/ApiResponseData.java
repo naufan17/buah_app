@@ -1,15 +1,15 @@
 package com.domain.buah_app.dto;
 
 import lombok.Builder;
+import lombok.Data;
 
+@Data
 @Builder
 public class ApiResponseData<T> {
 
   private String status;
   private String message;
   private T data;
-
-  public ApiResponseData() {}
 
   public ApiResponseData(String status, String message, T data) {
     this.status = status;

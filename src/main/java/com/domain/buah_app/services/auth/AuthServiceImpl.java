@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -27,10 +28,10 @@ public class AuthServiceImpl implements AuthService{
 
   @Override
   public LoginResponse login(LoginRequest request) {
-    Optional<User> user = this.userRepository.findByEmail(request.getEmail());
+    Optional<User> user = userRepository.findByEmail(request.getEmail());
 
     if (user.isEmpty()) {
-      throw new RuntimeException("User not found");
+      throw new UsernameNotFoundException("User not found");
     }
 
     if (!passwordEncoder.matches(request.getPassword(), user.get().getPassword())) {

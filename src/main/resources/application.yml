@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: buah_app
+
+# Set the server port
+server:
+  port: 8080
+
+  # Database Configuration
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/buah_app
+    username: postgres
+    password: postgre
+
+  # JPA Configuration
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Uncomment and adjust the following line if you need a specific timezone for JDBC
+        # jdbc.time_zone: UTC+07:00
+
+  # MVC Configuration
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+
+# JWT Configuration
+jwt:
+  secret: 09f26e402586e2faa8da4c98a35f1b20d6b033c6097befa8be3486a829587fe2f90a832bd3ff9d42710a4da095a2ce285b009f0c3730cd9b8e1af3eb84df6611
+  expiration: 86400000

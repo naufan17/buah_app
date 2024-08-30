@@ -54,7 +54,7 @@ public class SecurityConfig {
       .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer
         .configurationSource(this.corsConfigurationSource()))
       .authorizeHttpRequests(auth -> auth
-        .requestMatchers("/api/auth/login", "/api/fruits").permitAll()
+        .requestMatchers("/api/auth/login", "/api/fruits", "/api/fruits/{id}").permitAll()
         .anyRequest().authenticated());
       // .authenticationProvider(authenticationProvider());
       // .addFilterBefore(this.jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
