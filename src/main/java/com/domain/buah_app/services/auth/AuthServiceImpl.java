@@ -12,7 +12,7 @@ import com.domain.buah_app.dto.auth.LoginRequest;
 import com.domain.buah_app.dto.auth.LoginResponse;
 import com.domain.buah_app.entity.User;
 import com.domain.buah_app.repository.UserRepository;
-import com.domain.buah_app.utils.JwtUtil;
+import com.domain.buah_app.security.JwtUtil;
 
 @Service
 public class AuthServiceImpl implements AuthService{

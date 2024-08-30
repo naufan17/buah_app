@@ -18,8 +18,6 @@ import com.domain.buah_app.dto.ApiResponse;
 import com.domain.buah_app.dto.ApiResponseData;
 import com.domain.buah_app.dto.fruit.FruitRequest;
 import com.domain.buah_app.dto.fruit.FruitResponse;
-import com.domain.buah_app.entity.Fruit;
-import com.domain.buah_app.repository.FruitRepository;
 import com.domain.buah_app.services.fruit.FruitService;
 
 @RestController
@@ -29,17 +27,8 @@ public class FruitController {
   @Autowired
   private FruitService fruitService;
 
-  @Autowired
-  private FruitRepository fruitRepository;
-
   @GetMapping
   public ResponseEntity<ApiResponseData<List<FruitResponse>>> getAllFruits() {
-    try {
-
-    } catch (RuntimeException e) {
-      
-    }
-
     List<FruitResponse> fruitResponse = fruitService.getAllFruits();
 
     ApiResponseData<List<FruitResponse>> response = ApiResponseData.<List<FruitResponse>>builder()

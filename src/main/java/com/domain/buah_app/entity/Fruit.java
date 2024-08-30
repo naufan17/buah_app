@@ -1,6 +1,7 @@
 package com.domain.buah_app.entity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,6 +21,12 @@ public class Fruit implements Serializable {
 
   @Column(length = 100, nullable = false, unique = true)
   private String name;
+
+  // @Column(nullable = false, columnDefinition = "boolean default false")
+  // private boolean deleted = false;
+
+  // @Column(name="deleted_at")
+  // private LocalDateTime deletedAt;
 
   public Fruit() {}
 
@@ -42,4 +49,20 @@ public class Fruit implements Serializable {
   public void setName(String name) {
     this.name = name;
   }
+
+  // public boolean isDeleted() {
+  //   return deleted;
+  // }
+
+  // public void setDeleted(boolean deleted) {
+  //   this.deleted = deleted;
+  // }
+
+  // public LocalDateTime getDeletedAt() {
+  //   return deletedAt;
+  // }
+
+  // public void setDeletedAt(LocalDateTime deletedAt) {
+  //   this.deletedAt = deletedAt;
+  // }
 }

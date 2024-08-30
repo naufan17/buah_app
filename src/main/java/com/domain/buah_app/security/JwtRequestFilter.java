@@ -7,7 +7,6 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 
 import com.domain.buah_app.services.auth.UserDetailsServiceImpl;
-import com.domain.buah_app.utils.JwtUtil;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;

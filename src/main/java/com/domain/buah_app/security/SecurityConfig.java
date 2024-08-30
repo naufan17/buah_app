@@ -27,7 +27,7 @@ import com.domain.buah_app.services.auth.UserDetailsServiceImpl;
 @EnableWebSecurity
 public class SecurityConfig {
 
-  // private UserDetailsServiceImpl userDetailsService;
+  private UserDetailsServiceImpl userDetailsService;
 
   @Bean
   public BCryptPasswordEncoder passwordEncoder() {
@@ -43,10 +43,10 @@ public class SecurityConfig {
   //   return authenticationProvider;
   // }
 
-  @Bean
-  public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
-    return authConfig.getAuthenticationManager();
-  }
+  // @Bean
+  // public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+  //   return authConfig.getAuthenticationManager();
+  // }
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
